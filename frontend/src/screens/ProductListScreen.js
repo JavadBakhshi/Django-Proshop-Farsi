@@ -54,15 +54,17 @@ function ProductListScreen({ history, match }) {
     }
 
     return (
+        <p align="right">
+        <font face="yekan" size="+1">
         <div>
             <Row className='align-items-center'>
                 <Col>
-                    <h1>Products</h1>
+                    <h1>محصولات</h1>
                 </Col>
 
                 <Col className='text-right'>
                     <Button className='my-3' onClick={createProductHandler}>
-                        <i className='fas fa-plus'></i> Create Product
+                        <i className='fas fa-plus'></i> ایجاد محصول
                     </Button>
                 </Col>
             </Row>
@@ -120,6 +122,8 @@ function ProductListScreen({ history, match }) {
                         </div>
                     )}
         </div>
+        </font>
+            </p>
     )
 }
 

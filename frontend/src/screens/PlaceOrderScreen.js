@@ -49,14 +49,16 @@ function PlaceOrderScreen({ history }) {
     return (
         <div>
             <CheckoutSteps step1 step2 step3 step4 />
+            <p align="right">
+        <font face="yekan" size="+1">
             <Row>
                 <Col md={8}>
                     <ListGroup variant='flush'>
                         <ListGroup.Item>
-                            <h2>Shipping</h2>
+                            <h2>ترابری</h2>
 
                             <p>
-                                <strong>Shipping: </strong>
+                                <strong>ترابری: </strong>
                                 {cart.shippingAddress.address},  {cart.shippingAddress.city}
                                 {'  '}
                                 {cart.shippingAddress.postalCode},
@@ -66,15 +68,15 @@ function PlaceOrderScreen({ history }) {
                         </ListGroup.Item>
 
                         <ListGroup.Item>
-                            <h2>Payment Method</h2>
+                            <h2>روش پرداخت</h2>
                             <p>
-                                <strong>Method: </strong>
+                                <strong>روش: </strong>
                                 {cart.paymentMethod}
                             </p>
                         </ListGroup.Item>
 
                         <ListGroup.Item>
-                            <h2>Order Items</h2>
+                            <h2>اقلام سفارش</h2>
                             {cart.cartItems.length === 0 ? <Message variant='info'>
                                 Your cart is empty
                             </Message> : (
@@ -108,33 +110,33 @@ function PlaceOrderScreen({ history }) {
                     <Card>
                         <ListGroup variant='flush'>
                             <ListGroup.Item>
-                                <h2>Order Summary</h2>
+                                <h2>خلاصه سفارش</h2>
                             </ListGroup.Item>
 
                             <ListGroup.Item>
                                 <Row>
-                                    <Col>Items:</Col>
+                                    <Col>اقلام:</Col>
                                     <Col>${cart.itemsPrice}</Col>
                                 </Row>
                             </ListGroup.Item>
 
                             <ListGroup.Item>
                                 <Row>
-                                    <Col>Shipping:</Col>
+                                    <Col>ترابری:</Col>
                                     <Col>${cart.shippingPrice}</Col>
                                 </Row>
                             </ListGroup.Item>
 
                             <ListGroup.Item>
                                 <Row>
-                                    <Col>Tax:</Col>
+                                    <Col>مالیات:</Col>
                                     <Col>${cart.taxPrice}</Col>
                                 </Row>
                             </ListGroup.Item>
 
                             <ListGroup.Item>
                                 <Row>
-                                    <Col>Total:</Col>
+                                    <Col>مجموع:</Col>
                                     <Col>${cart.totalPrice}</Col>
                                 </Row>
                             </ListGroup.Item>
@@ -151,7 +153,7 @@ function PlaceOrderScreen({ history }) {
                                     disabled={cart.cartItems === 0}
                                     onClick={placeOrder}
                                 >
-                                    Place Order
+                                    ثبت سفارش
                                 </Button>
                             </ListGroup.Item>
 
@@ -159,6 +161,8 @@ function PlaceOrderScreen({ history }) {
                     </Card>
                 </Col>
             </Row>
+            </font>
+            </p>
         </div>
     )
 }

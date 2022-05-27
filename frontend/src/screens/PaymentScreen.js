@@ -25,12 +25,15 @@ function PaymentScreen({ history }) {
     }
 
     return (
+        
         <FormContainer>
             <CheckoutSteps step1 step2 step3 />
 
+            <p align="right">
+        <font face="yekan" size="+1">
             <Form onSubmit={submitHandler}>
                 <Form.Group>
-                    <Form.Label as='legend'>Select Method</Form.Label>
+                    <Form.Label as='legend'>روش را انتخاب کنید</Form.Label>
                     <Col>
                         <Form.Check
                             type='radio'
@@ -46,9 +49,11 @@ function PaymentScreen({ history }) {
                 </Form.Group>
 
                 <Button type='submit' variant='primary'>
-                    Continue
+                    ادامه
                 </Button>
             </Form>
+            </font>
+            </p>
         </FormContainer>
     )
 }

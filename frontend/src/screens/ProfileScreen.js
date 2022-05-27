@@ -64,9 +64,11 @@ function ProfileScreen({ history }) {
 
     }
     return (
+        <p align="right">
+        <font face="yekan" size="+1">
         <Row>
             <Col md={3}>
-                <h2>User Profile</h2>
+                <h2>پروفایل کاربری</h2>
 
                 {message && <Message variant='danger'>{message}</Message>}
                 {error && <Message variant='danger'>{error}</Message>}
@@ -74,11 +76,11 @@ function ProfileScreen({ history }) {
                 <Form onSubmit={submitHandler}>
 
                     <Form.Group controlId='name'>
-                        <Form.Label>Name</Form.Label>
+                        <Form.Label>نام</Form.Label>
                         <Form.Control
                             required
                             type='name'
-                            placeholder='Enter name'
+                            placeholder='نام خود را وارد کنید'
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                         >
@@ -86,11 +88,11 @@ function ProfileScreen({ history }) {
                     </Form.Group>
 
                     <Form.Group controlId='email'>
-                        <Form.Label>Email Address</Form.Label>
+                        <Form.Label>ایمیل</Form.Label>
                         <Form.Control
                             required
                             type='email'
-                            placeholder='Enter Email'
+                            placeholder='ایمیل خود را وارد کنید'
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         >
@@ -98,11 +100,11 @@ function ProfileScreen({ history }) {
                     </Form.Group>
 
                     <Form.Group controlId='password'>
-                        <Form.Label>Password</Form.Label>
+                        <Form.Label>رمز عبور</Form.Label>
                         <Form.Control
 
                             type='password'
-                            placeholder='Enter Password'
+                            placeholder='رمز عبور خود را وارد کنید'
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         >
@@ -110,11 +112,11 @@ function ProfileScreen({ history }) {
                     </Form.Group>
 
                     <Form.Group controlId='passwordConfirm'>
-                        <Form.Label>Confirm Password</Form.Label>
+                        <Form.Label> تایید رمز عبور </Form.Label>
                         <Form.Control
 
                             type='password'
-                            placeholder='Confirm Password'
+                            placeholder='رمز عبور را وارد کنید'
                             value={confirmPassword}
                             onChange={(e) => setConfirmPassword(e.target.value)}
                         >
@@ -122,14 +124,14 @@ function ProfileScreen({ history }) {
                     </Form.Group>
 
                     <Button type='submit' variant='primary'>
-                        Update
+                        بروزرسانی
                 </Button>
 
                 </Form>
             </Col>
 
             <Col md={9}>
-                <h2>My Orders</h2>
+                <h2>اقلام من</h2>
                 {loadingOrders ? (
                     <Loader />
                 ) : errorOrders ? (
@@ -158,7 +160,7 @@ function ProfileScreen({ history }) {
                                             )}</td>
                                             <td>
                                                 <LinkContainer to={`/order/${order._id}`}>
-                                                    <Button className='btn-sm'>Details</Button>
+                                                    <Button className='btn-sm'>جزییات</Button>
                                                 </LinkContainer>
                                             </td>
                                         </tr>
@@ -168,6 +170,8 @@ function ProfileScreen({ history }) {
                         )}
             </Col>
         </Row>
+        </font>
+            </p>
     )
 }
 

@@ -48,13 +48,15 @@ function UserEditScreen({ match, history }) {
     }
 
     return (
+        <p align="right">
+        <font face="yekan" size="+1">
         <div>
             <Link to='/admin/userlist'>
-                Go Back
+                بازگشت
             </Link>
 
             <FormContainer>
-                <h1>Edit User</h1>
+                <h1>ویرایش کاربران</h1>
                 {loadingUpdate && <Loader />}
                 {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
 
@@ -63,11 +65,11 @@ function UserEditScreen({ match, history }) {
                         <Form onSubmit={submitHandler}>
 
                             <Form.Group controlId='name'>
-                                <Form.Label>Name</Form.Label>
+                                <Form.Label>نام</Form.Label>
                                 <Form.Control
 
                                     type='name'
-                                    placeholder='Enter name'
+                                    placeholder='نام خود را وارد کنید'
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
                                 >
@@ -75,10 +77,10 @@ function UserEditScreen({ match, history }) {
                             </Form.Group>
 
                             <Form.Group controlId='email'>
-                                <Form.Label>Email Address</Form.Label>
+                                <Form.Label>ایمیل</Form.Label>
                                 <Form.Control
                                     type='email'
-                                    placeholder='Enter Email'
+                                    placeholder='ایمیل خود را وارد کنید'
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                 >
@@ -96,7 +98,7 @@ function UserEditScreen({ match, history }) {
                             </Form.Group>
 
                             <Button type='submit' variant='primary'>
-                                Update
+                                بروزرسانی
                         </Button>
 
                         </Form>
@@ -104,7 +106,8 @@ function UserEditScreen({ match, history }) {
 
             </FormContainer >
         </div>
-
+        </font>
+            </p>
     )
 }
 

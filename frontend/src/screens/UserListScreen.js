@@ -38,8 +38,10 @@ function UserListScreen({ history }) {
     }
 
     return (
+        <p align="right">
+        <font face="yekan" size="+1">
         <div>
-            <h1>Users</h1>
+            <h1>کاربران</h1>
             {loading
                 ? (<Loader />)
                 : error
@@ -85,6 +87,8 @@ function UserListScreen({ history }) {
                         </Table>
                     )}
         </div>
+        </font>
+            </p>
     )
 }
 

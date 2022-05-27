@@ -29,8 +29,10 @@ function OrderListScreen({ history }) {
 
 
     return (
+        <p align="right">
+        <font face="yekan" size="+1">
         <div>
-            <h1>Orders</h1>
+            <h1>سفارشات</h1>
             {loading
                 ? (<Loader />)
                 : error
@@ -74,7 +76,7 @@ function OrderListScreen({ history }) {
                                         <td>
                                             <LinkContainer to={`/order/${order._id}`}>
                                                 <Button variant='light' className='btn-sm'>
-                                                    Details
+                                                    جزِییات
                                                 </Button>
                                             </LinkContainer>
 
@@ -86,6 +88,8 @@ function OrderListScreen({ history }) {
                         </Table>
                     )}
         </div>
+        </font>
+            </p>
     )
 }
 

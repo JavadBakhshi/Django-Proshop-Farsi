@@ -29,14 +29,18 @@ function CartScreen({ match, location, history }) {
     }
 
     return (
+        <p align="right">
+        <font face="yekan" size="+1">
         <Row>
             <Col md={8}>
-                <h1>Shopping Cart</h1>
+                <h1>سبد خرید</h1>
                 {cartItems.length === 0 ? (
                     <Message variant='info'>
-                        Your cart is empty <Link to='/'>Go Back</Link>
+                        سبد شما خالی است <Link to='/'>صفحه اصلی</Link>
                     </Message>
                 ) : (
+
+                    
                         <ListGroup variant='flush'>
                             {cartItems.map(item => (
                                 <ListGroup.Item key={item.product}>
@@ -90,7 +94,7 @@ function CartScreen({ match, location, history }) {
                 <Card>
                     <ListGroup variant='flush'>
                         <ListGroup.Item>
-                            <h2>Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)}) items</h2>
+                            <h2>مجموع ({cartItems.reduce((acc, item) => acc + item.qty, 0)}) اقلام</h2>
                             ${cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)}
                         </ListGroup.Item>
                     </ListGroup>
@@ -102,7 +106,7 @@ function CartScreen({ match, location, history }) {
                             disabled={cartItems.length === 0}
                             onClick={checkoutHandler}
                         >
-                            Proceed To Checkout
+                            ادامه پرداخت
                         </Button>
                     </ListGroup.Item>
 
@@ -110,6 +114,8 @@ function CartScreen({ match, location, history }) {
                 </Card>
             </Col>
         </Row>
+        </font>
+            </p>
     )
 }
 

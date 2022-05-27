@@ -40,6 +40,8 @@ function RegisterScreen({ location, history }) {
     }
 
     return (
+        <p align="right">
+        <font face="yekan" size="+1">
         <FormContainer>
             <h1>Sign In</h1>
             {message && <Message variant='danger'>{message}</Message>}
@@ -48,11 +50,11 @@ function RegisterScreen({ location, history }) {
             <Form onSubmit={submitHandler}>
 
                 <Form.Group controlId='name'>
-                    <Form.Label>Name</Form.Label>
+                    <Form.Label>نام</Form.Label>
                     <Form.Control
                         required
                         type='name'
-                        placeholder='Enter name'
+                        placeholder='نام خود را وارد کنید'
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                     >
@@ -60,11 +62,11 @@ function RegisterScreen({ location, history }) {
                 </Form.Group>
 
                 <Form.Group controlId='email'>
-                    <Form.Label>Email Address</Form.Label>
+                    <Form.Label>ایمیل</Form.Label>
                     <Form.Control
                         required
                         type='email'
-                        placeholder='Enter Email'
+                        placeholder='ایمیل خود را وارد کنید'
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     >
@@ -72,11 +74,11 @@ function RegisterScreen({ location, history }) {
                 </Form.Group>
 
                 <Form.Group controlId='password'>
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label>رمز عبور</Form.Label>
                     <Form.Control
                         required
                         type='password'
-                        placeholder='Enter Password'
+                        placeholder='رمز عبور خود را وارد کنید'
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     >
@@ -84,11 +86,11 @@ function RegisterScreen({ location, history }) {
                 </Form.Group>
 
                 <Form.Group controlId='passwordConfirm'>
-                    <Form.Label>Confirm Password</Form.Label>
+                    <Form.Label>تایید رمز عبور</Form.Label>
                     <Form.Control
                         required
                         type='password'
-                        placeholder='Confirm Password'
+                        placeholder='تایید رمز عبور'
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
                     >
@@ -103,13 +105,15 @@ function RegisterScreen({ location, history }) {
 
             <Row className='py-3'>
                 <Col>
-                    Have an Account? <Link
+                    ثبت نام کرده اید? <Link
                         to={redirect ? `/login?redirect=${redirect}` : '/login'}>
-                        Sign In
+                        ورود
                         </Link>
                 </Col>
             </Row>
         </FormContainer >
+        </font>
+            </p>
     )
 }
 

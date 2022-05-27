@@ -25,7 +25,11 @@ function HomeScreen({ history }) {
         <div>
             {!keyword && <ProductCarousel />}
 
-            <h1>Latest Products</h1>
+            <p align="right">
+                <font face="yekan" size="+3">
+                جدیدترین محصولات
+                </font>
+            </p>
             {loading ? <Loader />
                 : error ? <Message variant='danger'>{error}</Message>
                     :

@@ -78,13 +78,15 @@ function OrderScreen({ match, history }) {
     ) : error ? (
         <Message variant='danger'>{error}</Message>
     ) : (
+        <p align="right">
+        <font face="yekan" size="+1">
                 <div>
                     <h1>Order: {order.Id}</h1>
                     <Row>
                         <Col md={8}>
                             <ListGroup variant='flush'>
                                 <ListGroup.Item>
-                                    <h2>Shipping</h2>
+                                    <h2>ترابری</h2>
                                     <p><strong>Name: </strong> {order.user.name}</p>
                                     <p><strong>Email: </strong><a href={`mailto:${order.user.email}`}>{order.user.email}</a></p>
                                     <p>
@@ -104,7 +106,7 @@ function OrderScreen({ match, history }) {
                                 </ListGroup.Item>
 
                                 <ListGroup.Item>
-                                    <h2>Payment Method</h2>
+                                    <h2>روش پرداخت</h2>
                                     <p>
                                         <strong>Method: </strong>
                                         {order.paymentMethod}
@@ -112,15 +114,15 @@ function OrderScreen({ match, history }) {
                                     {order.isPaid ? (
                                         <Message variant='success'>Paid on {order.paidAt}</Message>
                                     ) : (
-                                            <Message variant='warning'>Not Paid</Message>
+                                            <Message variant='warning'>خطا</Message>
                                         )}
 
                                 </ListGroup.Item>
 
                                 <ListGroup.Item>
-                                    <h2>Order Items</h2>
+                                    <h2>اقلام سفارش</h2>
                                     {order.orderItems.length === 0 ? <Message variant='info'>
-                                        Order is empty
+                                        سبد خرید خالیست
                             </Message> : (
                                             <ListGroup variant='flush'>
                                                 {order.orderItems.map((item, index) => (
@@ -152,33 +154,33 @@ function OrderScreen({ match, history }) {
                             <Card>
                                 <ListGroup variant='flush'>
                                     <ListGroup.Item>
-                                        <h2>Order Summary</h2>
+                                        <h2>خلاصه سفارش</h2>
                                     </ListGroup.Item>
 
                                     <ListGroup.Item>
                                         <Row>
-                                            <Col>Items:</Col>
+                                            <Col>اقلام:</Col>
                                             <Col>${order.itemsPrice}</Col>
                                         </Row>
                                     </ListGroup.Item>
 
                                     <ListGroup.Item>
                                         <Row>
-                                            <Col>Shipping:</Col>
+                                            <Col>ترابری:</Col>
                                             <Col>${order.shippingPrice}</Col>
                                         </Row>
                                     </ListGroup.Item>
 
                                     <ListGroup.Item>
                                         <Row>
-                                            <Col>Tax:</Col>
+                                            <Col>مالیات:</Col>
                                             <Col>${order.taxPrice}</Col>
                                         </Row>
                                     </ListGroup.Item>
 
                                     <ListGroup.Item>
                                         <Row>
-                                            <Col>Total:</Col>
+                                            <Col>مجموع:</Col>
                                             <Col>${order.totalPrice}</Col>
                                         </Row>
                                     </ListGroup.Item>
@@ -215,6 +217,8 @@ function OrderScreen({ match, history }) {
                         </Col>
                     </Row>
                 </div>
+                </font>
+            </p>
             )
 }
 

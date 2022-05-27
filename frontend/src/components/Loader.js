@@ -13,7 +13,7 @@ function Loader() {
                 display: 'block'
             }}
         >
-            <span className='sr-only'>Loading...</span>
+            <span className='sr-only'>در حال بارگیری ...</span>
         </Spinner>
     )
 }

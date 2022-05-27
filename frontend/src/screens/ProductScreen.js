@@ -54,6 +54,8 @@ function ProductScreen({ match, history }) {
     }
 
     return (
+        <p align="right">
+        <font face="yekan" size="+1">
         <div>
             <Link to='/' className='btn btn-light my-3'>Go Back</Link>
             {loading ?
@@ -79,11 +81,11 @@ function ProductScreen({ match, history }) {
                                         </ListGroup.Item>
 
                                         <ListGroup.Item>
-                                            Price: ${product.price}
+                                            قیمت: ${product.price}
                                         </ListGroup.Item>
 
                                         <ListGroup.Item>
-                                            Description: {product.description}
+                                            توضیحات: {product.description}
                                         </ListGroup.Item>
                                     </ListGroup>
                                 </Col>
@@ -94,7 +96,7 @@ function ProductScreen({ match, history }) {
                                         <ListGroup variant='flush'>
                                             <ListGroup.Item>
                                                 <Row>
-                                                    <Col>Price:</Col>
+                                                    <Col>قیمت:</Col>
                                                     <Col>
                                                         <strong>${product.price}</strong>
                                                     </Col>
@@ -102,9 +104,9 @@ function ProductScreen({ match, history }) {
                                             </ListGroup.Item>
                                             <ListGroup.Item>
                                                 <Row>
-                                                    <Col>Status:</Col>
+                                                    <Col>وضعیت:</Col>
                                                     <Col>
-                                                        {product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}
+                                                        {product.countInStock > 0 ? 'موجود' : 'ناموجود'}
                                                     </Col>
                                                 </Row>
                                             </ListGroup.Item>
@@ -112,7 +114,7 @@ function ProductScreen({ match, history }) {
                                             {product.countInStock > 0 && (
                                                 <ListGroup.Item>
                                                     <Row>
-                                                        <Col>Qty</Col>
+                                                        <Col>تعداد</Col>
                                                         <Col xs='auto' className='my-1'>
                                                             <Form.Control
                                                                 as="select"
@@ -141,7 +143,7 @@ function ProductScreen({ match, history }) {
                                                     className='btn-block'
                                                     disabled={product.countInStock == 0}
                                                     type='button'>
-                                                    Add to Cart
+                                                    اضافه کردن به سبد خرید
                                                 </Button>
                                             </ListGroup.Item>
                                         </ListGroup>
@@ -151,8 +153,8 @@ function ProductScreen({ match, history }) {
 
                             <Row>
                                 <Col md={6}>
-                                    <h4>Reviews</h4>
-                                    {product.reviews.length === 0 && <Message variant='info'>No Reviews</Message>}
+                                    <h4>نظرات</h4>
+                                    {product.reviews.length === 0 && <Message variant='info'>بدون بررسی</Message>}
 
                                     <ListGroup variant='flush'>
                                         {product.reviews.map((review) => (
@@ -165,16 +167,16 @@ function ProductScreen({ match, history }) {
                                         ))}
 
                                         <ListGroup.Item>
-                                            <h4>Write a review</h4>
+                                            <h4>نظر خود را بنویسید</h4>
 
                                             {loadingProductReview && <Loader />}
-                                            {successProductReview && <Message variant='success'>Review Submitted</Message>}
+                                            {successProductReview && <Message variant='success'>ثبت نظر</Message>}
                                             {errorProductReview && <Message variant='danger'>{errorProductReview}</Message>}
 
                                             {userInfo ? (
                                                 <Form onSubmit={submitHandler}>
                                                     <Form.Group controlId='rating'>
-                                                        <Form.Label>Rating</Form.Label>
+                                                        <Form.Label>رتبه بندی</Form.Label>
                                                         <Form.Control
                                                             as='select'
                                                             value={rating}
@@ -190,7 +192,7 @@ function ProductScreen({ match, history }) {
                                                     </Form.Group>
 
                                                     <Form.Group controlId='comment'>
-                                                        <Form.Label>Review</Form.Label>
+                                                        <Form.Label>بررسی</Form.Label>
                                                         <Form.Control
                                                             as='textarea'
                                                             row='5'
@@ -204,12 +206,12 @@ function ProductScreen({ match, history }) {
                                                         type='submit'
                                                         variant='primary'
                                                     >
-                                                        Submit
+                                                        ثبت نظر
                                                     </Button>
 
                                                 </Form>
                                             ) : (
-                                                    <Message variant='info'>Please <Link to='/login'>login</Link> to write a review</Message>
+                                                    <Message variant='info'>لطفا <Link to='/login'>وارد شوید</Link> برای ثبت نظر</Message>
                                                 )}
                                         </ListGroup.Item>
                                     </ListGroup>
@@ -222,6 +224,8 @@ function ProductScreen({ match, history }) {
 
 
         </div >
+        </font>
+            </p>
     )
 }
 
