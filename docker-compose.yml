@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./backend
+    ports:
+      -3000:3000
+    environment:
+      - DB_URL=value
+  backend:
+    build: ./frontend
+    ports:
+      -8000:8000
+    environment:
+      - DB_URL=value
+  database:
+    image: imageName
+    ports:
+      -
+    volumes:
+      -vidly:/data/db
